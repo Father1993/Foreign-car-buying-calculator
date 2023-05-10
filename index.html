@@ -1,0 +1,228 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculate Japan</title>
+   <link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+   <link type="Image/x-icon" href="favicon.ico" rel="icon">
+   <style>
+      body {
+         background-color: #333;
+      }
+
+      .container {
+         background-color: #333;
+         width: 600px;
+         padding: 20px;
+         margin: 0 auto;
+         border: 1px solid black;
+         box-shadow: 1px 1px 10px 1px black;
+      }
+
+      h3 {
+         text-align: center;
+         color: red;
+      }
+
+      h3 span {
+         color: white;
+      }
+
+      p {
+         text-align: center;
+         color: yellowgreen;
+      }
+
+      .btn {
+         display: block;
+         margin: 0 auto;
+         width: 100px;
+         height: 30px;
+         background-color: white;
+         cursor: pointer;
+         opacity: .3;
+         transition: all ease 0.4s;
+         border: none;
+      }
+
+      .btn:hover {
+         opacity: 1;
+         transform: scale(1.1);
+         box-shadow: 1px 1px 20px 5px red;
+         background-color: greenyellow;
+      }
+
+      .btn:focus {
+         opacity: 1;
+         transform: scale(1.1);
+         box-shadow: 1px 1px 20px 5px red;
+         background-color: greenyellow;
+      }
+
+      .stat {
+         display: flex;
+         flex-direction: column;
+         background-color: #333;
+      }
+
+      .stat p span {
+         color: red;
+      }
+
+      .kurs {
+         transition: all ease 0.3s;
+      }
+
+      .tamojna {
+         transition: all ease 0.4s;
+      }
+
+      .price {
+         transition: all ease 0.3s;
+      }
+
+      .kurs:hover {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red;
+      }
+
+      .tamojna:hover {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .price:hover {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .kurs:focus {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red;
+      }
+
+      .tamojna:focus {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .price:focus {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .total {
+         display: block;
+         margin: 0 auto;
+         margin-top: 20px;
+         transition: all ease 0.3s;
+      }
+
+      .total:hover {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .span1 {
+         display: block;
+         position: relative;
+         color: white;
+         margin-bottom: 10px;
+      }
+
+      .span2 {
+         display: block;
+         position: relative;
+         color: white;
+         margin-bottom: 10px;
+         margin-top: 10px;
+      }
+
+      .span3 {
+         display: block;
+         position: relative;
+         color: white;
+         margin-bottom: 10px;
+         margin-top: 10px;
+      }
+
+      .calc {
+         width: fit-content;
+         margin: 0 auto;
+      }
+
+      .nav-link {
+         font-size: 11px;
+         margin-right: 33px;
+         margin-left: 10px;
+         color: greenyellow;
+      }
+
+      .nav-link2 {
+         font-size: 10px;
+         color: greenyellow;
+         margin-left: 10px;
+      }
+
+      .span0 {
+         font-size: 12px;
+         display: block;
+         color: aliceblue;
+         margin-bottom: 10px;
+      }
+
+      .comisia {
+         margin-bottom: 12px;
+         transition: all ease 0.3s;
+      }
+
+      .comisia:hover {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+
+      .comisia:focus {
+         transform: scale(1.3);
+         box-shadow: 1px 1px 5px 5px red
+      }
+   </style>
+   <script src="main.js" defer></script>
+</head>
+
+<body>
+   <div class="container">
+      <nav class="nav">
+         <a href="index.html" class="nav-link">Рассчитать стоимость авто в Японии</a>
+         <a href="indexKorea.html" class="nav-link">Рассчитать стоимость авто в Кореи</a>
+         <a href="rev.html" class="nav-link2">Рассчитать ставку из бюджета в ¥</a>
+      </nav>
+      <h3><span>Авто</span> Токио</h3>
+      <div class="calc">
+         <span class="span0">Введите расходы по РФ и комиссию</span>
+         <input class="comisia" id="comisia" type="number" placeholder="130 000р + 30 или 50">
+         <span class="span1">Введите курс ¥</span>
+         <input class="kurs" id="kurs" type="number" placeholder="Введите курс ¥">
+         <span class="span2">Введите сумму таможни</span>
+         <input class="tamojna" id="tamojna" type="number" placeholder="Введите сумму таможни">
+         <span class="span3">Цена авто в ¥</span>
+         <input class="price" id="price" type="number" placeholder="Цена авто в ¥">
+         <p class="avto">=</p>
+         <button id="btn" class="btn" type="button">Рассчитать</button>
+         <input class="total" id="totalPrice">
+      </div>
+
+
+      <div class="stat">
+         <p>1) Сумма Авто + расходы по Японии = <span class="in-yen"></span></p>
+         <p>2) Сумма в рублях по курсу + расходы по Японии = <span class="in-rub"></span></p>
+         <p>3) Сумма таможни + 1,5% = <span class="tam"></span></p>
+         <p>4) Сумма с учетом курса и таможни = <span class="kurs-tam"></span></p>
+         <p>5) Окончательная сумма с комиссией(100,000&#8381) = <span class="all"></span></p>
+      </div>
+
+   </div>
+</body>
+
+</html>
